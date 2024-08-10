@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>729</width>
+    <height>555</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(31, 31, 31);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="Header">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>40</y>
+      <width>231</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 22pt &quot;Open Sans Light&quot;;background-color: rgb(60, 60, 60);
+border-radius: 23px; /* Half of the button's height for a perfect circle */
+</string>
+    </property>
+    <property name="text">
+     <string>Dynamic Signal</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <property name="indent">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="STOP_BT">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>460</y>
+      <width>101</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Light</family>
+      <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+                                        background-color: rgb(255, 0, 100);
+                                        border-radius: 23px; /* Half of the button's height for a perfect circle */
+font: 18pt &quot;Open Sans Light&quot;;
+	color: rgb(255, 255, 255);
+                                    }
+                                    QPushButton:hover {
+                                        background-color: rgb(200, 0, 0); /* Optional: Change color on hover */
+                                    }
+                                    QPushButton:pressed {
+                                        background-color: rgb(100, 0, 0); /* Optional: Change color on press */
+                                    }</string>
+    </property>
+    <property name="text">
+     <string>STOP</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="LOG_TEXT">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>140</y>
+      <width>621</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(60, 60, 60);
+border-radius: 15px;</string>
+    </property>
+    <property name="plainText">
+     <string>SENT: LED100, TIMESTAMP: 2022-09-50 09:50:22, DATE: 2567-09-08
+SENT: CD100, TIMESTAMP: 2022-09-50 09:55:58, DATE: 2567-09-08
+SENT: STOP, TIMESTAMP: 2022-09-50 09:58:00, DATE: 2567-09-08
+
+
+</string>
+    </property>
+    <property name="tabStopDistance">
+     <double>80.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="LED_ON">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>460</y>
+      <width>151</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans Light</family>
+      <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+                                        background-color: rgb(0, 255, 100);
+                                        border-radius: 23px; /* Half of the button's height for a perfect circle */
+                                        font: 18pt &quot;Open Sans Light&quot;;
+
+                                    }
+                                    QPushButton:hover {
+                                        background-color: rgb(0, 150, 0); /* Optional: Change color on hover */
+                                    }
+                                    QPushButton:pressed {
+                                        background-color: rgb(0, 100, 0); /* Optional: Change color on press */
+                                    }</string>
+    </property>
+    <property name="text">
+     <string>LED ON</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="LED_COUNT_DOWN">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>460</y>
+      <width>151</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+                                        color: rgb(255, 255, 255);
+                                        background-color: rgb(0, 100, 255);
+                                        border-radius: 23px; /* Half of the button's height for a perfect circle */
+ font: 18pt &quot;Open Sans Light&quot;;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 10); /* Adjust values for desired effect */
+
+                                    }
+                                    QPushButton:hover {
+                                        background-color: rgb(0, 0, 150); /* Optional: Change color on hover */
+                                    }
+                                    QPushButton:pressed {
+                                        background-color: rgb(0, 0, 100); /* Optional: Change color on press */
+                                    }</string>
+    </property>
+    <property name="text">
+     <string>LED CD</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="LED_SLIDER">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>380</y>
+      <width>531</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:horizontal {
+    border: 3px solid rgb(100, 100, 100);
+    height: 6px;
+ border-radius: 6px;
+}
+
+QSlider::handle:horizontal {
+    background:rgb(100, 100, 100);
+    width: 30px;
+    height: 30px;
+    margin: -15px -3px;
+    border-radius: 15px;
+    border: 3px solid rgb(100, 100, 100);
+
+}
+
+QSlider::add-page:horizontal {
+    background: qlineargradient(x1:0, y1:0,
+                x2:0, y2:1, stop:0 #1B1B1B, stop:1 #4c4c4c);
+    height: 6px;
+ border-radius: 5px;
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(60, 60, 60);
+    height: 6px;
+ border-radius: 5px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #007ad9;
+    border-color: #007ad9;
+}
+
+QSlider {
+    background-color: rgb(43, 43, 43);
+    height: 36px;  /* Adjust this value as needed for overall slider height */
+}</string>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="LED_PERCENT">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>380</y>
+      <width>71</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>671</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(43, 43, 43);
+border-radius: 23px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>120</y>
+      <width>671</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(43, 43, 43);
+border-radius: 23px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="status_heading">
+    <property name="geometry">
+     <rect>
+      <x>481</x>
+      <y>40</y>
+      <width>201</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 16pt &quot;Open Sans Light&quot;;border-radius: 23px; /* Half of the button's height for a perfect circle */
+background-color: rgb(60, 60, 60);
+</string>
+    </property>
+    <property name="text">
+     <string>   STATUS:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="STATUS">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>40</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans SemiBold</family>
+      <pointsize>16</pointsize>
+      <weight>9</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:75 16pt &quot;Open Sans SemiBold&quot;;
+color: rgb(255, 255, 255);
+                                        border-radius: 23px; /* Half of the button's height for a perfect circle */
+background-color: rgb(60, 60, 60);
+</string>
+    </property>
+    <property name="text">
+     <string>LED ON</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TASK">
+    <property name="geometry">
+     <rect>
+      <x>375</x>
+      <y>40</y>
+      <width>91</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans SemiBold</family>
+      <pointsize>16</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">                                        font: 16pt &quot;Open Sans SemiBold&quot;;
+
+color: rgb(255, 255, 255);
+ border-radius: 23px; background-color: rgb(60, 60, 60);
+</string>
+    </property>
+    <property name="text">
+     <string>SENT</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="task_label">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>40</y>
+      <width>151</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">                                        border-radius: 23px; /* Half of the button's height for a perfect circle */
+color: rgb(255, 255, 255); font: 16pt &quot;Open Sans Light&quot;;
+background-color: rgb(60, 60, 60);
+</string>
+    </property>
+    <property name="text">
+     <string>  TASK :</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <zorder>label_2</zorder>
+   <zorder>label</zorder>
+   <zorder>Header</zorder>
+   <zorder>STOP_BT</zorder>
+   <zorder>LOG_TEXT</zorder>
+   <zorder>LED_ON</zorder>
+   <zorder>LED_COUNT_DOWN</zorder>
+   <zorder>LED_SLIDER</zorder>
+   <zorder>LED_PERCENT</zorder>
+   <zorder>status_heading</zorder>
+   <zorder>STATUS</zorder>
+   <zorder>task_label</zorder>
+   <zorder>TASK</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>LED_SLIDER</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>LED_PERCENT</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>375</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>647</x>
+     <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
