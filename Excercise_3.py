@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(729, 555)
+        MainWindow.resize(731, 589)
         MainWindow.setStyleSheet("background-color: rgb(31, 31, 31);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
         self.Header.setIndent(0)
         self.Header.setObjectName("Header")
         self.STOP_BT = QtWidgets.QPushButton(self.centralwidget)
-        self.STOP_BT.setGeometry(QtCore.QRect(570, 460, 101, 46))
+        self.STOP_BT.setGeometry(QtCore.QRect(570, 500, 101, 46))
         font = QtGui.QFont()
         font.setFamily("Open Sans Light")
         font.setPointSize(18)
@@ -53,7 +53,7 @@ class Ui_MainWindow(object):
 "                                    }")
         self.STOP_BT.setObjectName("STOP_BT")
         self.LOG_TEXT = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.LOG_TEXT.setGeometry(QtCore.QRect(50, 140, 621, 231))
+        self.LOG_TEXT.setGeometry(QtCore.QRect(50, 350, 621, 61))
         self.LOG_TEXT.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.LOG_TEXT.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(60, 60, 60);\n"
@@ -61,7 +61,7 @@ class Ui_MainWindow(object):
         self.LOG_TEXT.setTabStopDistance(80.0)
         self.LOG_TEXT.setObjectName("LOG_TEXT")
         self.LED_ON = QtWidgets.QPushButton(self.centralwidget)
-        self.LED_ON.setGeometry(QtCore.QRect(50, 460, 151, 46))
+        self.LED_ON.setGeometry(QtCore.QRect(50, 500, 151, 46))
         font = QtGui.QFont()
         font.setFamily("Open Sans Light")
         font.setPointSize(18)
@@ -83,7 +83,7 @@ class Ui_MainWindow(object):
 "                                    }")
         self.LED_ON.setObjectName("LED_ON")
         self.LED_COUNT_DOWN = QtWidgets.QPushButton(self.centralwidget)
-        self.LED_COUNT_DOWN.setGeometry(QtCore.QRect(210, 460, 151, 46))
+        self.LED_COUNT_DOWN.setGeometry(QtCore.QRect(210, 500, 151, 46))
         self.LED_COUNT_DOWN.setStyleSheet("QPushButton {\n"
 "                                        color: rgb(255, 255, 255);\n"
 "                                        background-color: rgb(0, 100, 255);\n"
@@ -100,7 +100,7 @@ class Ui_MainWindow(object):
 "                                    }")
         self.LED_COUNT_DOWN.setObjectName("LED_COUNT_DOWN")
         self.LED_SLIDER = QtWidgets.QSlider(self.centralwidget)
-        self.LED_SLIDER.setGeometry(QtCore.QRect(50, 380, 531, 61))
+        self.LED_SLIDER.setGeometry(QtCore.QRect(50, 420, 531, 61))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
         self.LED_SLIDER.setOrientation(QtCore.Qt.Horizontal)
         self.LED_SLIDER.setObjectName("LED_SLIDER")
         self.LED_PERCENT = QtWidgets.QLCDNumber(self.centralwidget)
-        self.LED_PERCENT.setGeometry(QtCore.QRect(600, 380, 71, 61))
+        self.LED_PERCENT.setGeometry(QtCore.QRect(600, 420, 71, 61))
         self.LED_PERCENT.setStyleSheet("")
         self.LED_PERCENT.setObjectName("LED_PERCENT")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -159,13 +159,13 @@ class Ui_MainWindow(object):
         self.label.setText("")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(30, 120, 671, 411))
+        self.label_2.setGeometry(QtCore.QRect(30, 120, 671, 441))
         self.label_2.setStyleSheet("background-color: rgb(43, 43, 43);\n"
 "border-radius: 23px;")
         self.label_2.setText("")
         self.label_2.setObjectName("label_2")
         self.status_heading = QtWidgets.QLabel(self.centralwidget)
-        self.status_heading.setGeometry(QtCore.QRect(481, 40, 201, 51))
+        self.status_heading.setGeometry(QtCore.QRect(470, 40, 201, 51))
         self.status_heading.setStyleSheet("color: rgb(255, 255, 255);\n"
 "font: 16pt \"Open Sans Light\";border-radius: 23px; /* Half of the button\'s height for a perfect circle */\n"
 "background-color: rgb(60, 60, 60);\n"
@@ -212,6 +212,19 @@ class Ui_MainWindow(object):
 "")
         self.task_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.task_label.setObjectName("task_label")
+        self.Header_2 = QtWidgets.QLabel(self.centralwidget)
+        self.Header_2.setGeometry(QtCore.QRect(50, 140, 621, 201))
+        self.Header_2.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.Header_2.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 22pt \"Open Sans Light\";background-color: rgb(60, 60, 60);\n"
+"border-radius: 23px; /* Half of the button\'s height for a perfect circle */\n"
+"")
+        self.Header_2.setText("")
+        self.Header_2.setTextFormat(QtCore.Qt.RichText)
+        self.Header_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.Header_2.setWordWrap(False)
+        self.Header_2.setIndent(0)
+        self.Header_2.setObjectName("Header_2")
         self.label_2.raise_()
         self.label.raise_()
         self.Header.raise_()
@@ -225,6 +238,7 @@ class Ui_MainWindow(object):
         self.STATUS.raise_()
         self.task_label.raise_()
         self.TASK.raise_()
+        self.Header_2.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")

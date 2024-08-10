@@ -1,0 +1,1 @@
+pyuic5 -x IED.ui -o Excercise_3.py
