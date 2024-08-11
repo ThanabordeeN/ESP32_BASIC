@@ -1,0 +1,5 @@
+tkgpio~=0.1.1
+pyserial~=3.5
+gpiozero~=2.0.1
+pyqt5~=5.15.9
+pyqtgraph~=0.13.7
