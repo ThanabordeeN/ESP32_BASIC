@@ -74,7 +74,7 @@ def main():
         """
         led1.off()
         led2.off()
-        led3.off() if led3.is_lit else led3.pulse(fade_in_time=0.5, fade_out_time=0.5),print("Stop!")
+        led3.off() if led3.is_lit else led3.pulse(fade_in_time=0.5, fade_out_time=0.5), print("Stop!")
 
     button1.when_pressed = button_1_pressed
     button2.when_held = button_2_held
