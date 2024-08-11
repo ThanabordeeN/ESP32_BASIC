@@ -253,12 +253,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.Header.setText(_translate("MainWindow", "Dynamic Signal"))
         self.STOP_BT.setText(_translate("MainWindow", "STOP"))
-        self.LOG_TEXT.setPlainText(_translate("MainWindow", "SENT: LED100, TIMESTAMP: 2022-09-50 09:50:22, DATE: 2567-09-08\n"
-"SENT: CD100, TIMESTAMP: 2022-09-50 09:55:58, DATE: 2567-09-08\n"
-"SENT: STOP, TIMESTAMP: 2022-09-50 09:58:00, DATE: 2567-09-08\n"
-"\n"
-"\n"
-""))
         self.LED_ON.setText(_translate("MainWindow", "LED ON"))
         self.LED_COUNT_DOWN.setText(_translate("MainWindow", "LED CD"))
         self.status_heading.setText(_translate("MainWindow", "   STATUS:"))
