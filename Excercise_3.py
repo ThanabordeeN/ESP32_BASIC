@@ -256,7 +256,6 @@ class Ui_MainWindow(object):
         self.LED_ON.setText(_translate("MainWindow", "LED ON"))
         self.LED_COUNT_DOWN.setText(_translate("MainWindow", "LED CD"))
         self.status_heading.setText(_translate("MainWindow", "   STATUS:"))
-        self.STATUS.setText(_translate("MainWindow", "LED ON"))
         self.TASK.setText(_translate("MainWindow", "SENT"))
         self.task_label.setText(_translate("MainWindow", "  TASK :"))
 

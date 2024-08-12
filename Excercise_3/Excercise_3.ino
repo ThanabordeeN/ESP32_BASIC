@@ -1,21 +1,21 @@
 const int led1Pin = 18;
 const int freq = 5000;
-const int ledChannel = 0;  
-const int resolution = 8;  
+const int ledChannel = 0;
+const int resolution = 8;
 
 volatile char type;
 volatile int pwm_percentile;
-int PWM;
-bool suspend = false;
-TaskHandle_t hwcontrolTask;  
+float PWM = 0;
+volatile int suspend = 0;
 
-
+// TaskHandle_t
 
 void setup() {
   Serial.begin(115200);
   xTaskCreatePinnedToCore(serialget, "get serial data", 1000, NULL, 0, NULL, 0);
-  xTaskCreatePinnedToCore(hwcontrol, "HW control", 1000, NULL, 0, &hwcontrolTask, 0);
-  ledcAttach(led1Pin, freq,resolution);  // กำหนดขา led ที่ต้องการควบคุม
+  xTaskCreatePinnedToCore(hwcontrol, "HW control", 1000, NULL, 0, NULL, 0);
+
+  ledcAttach(led1Pin, freq, resolution);  // กำหนดขา led ที่ต้องการควบคุม
   //ledcAttachChannel(led1Pin, freq,resolution,ledChannel);
 }
 
@@ -25,6 +25,10 @@ void serialget(void *pvParameters) {
       String command = Serial.readString();
       type = command.substring(0, 1).charAt(0);
       pwm_percentile = command.substring(1).toInt();
+
+      // Serial.println(command);
+      // Serial.println(type);
+      // Serial.println(pwm_percentile);
     }
     vTaskDelay(pdMS_TO_TICKS(10));
   }
@@ -32,35 +36,51 @@ void serialget(void *pvParameters) {
 
 void hwcontrol(void *pvParameters) {
   while (1) {
-    PWM = (pwm_percentile * 100.0) / 255;
-    if (type == 'L') {
-      ledcWrite(ledChannel, PWM);
-    } else if (type == 'C') {
-      count_down(); 
-    } else {
-      if (!suspend) {
-        vTaskSuspend(hwcontrolTask);
-        suspend = true;
-      } else {
-        vTaskResume(hwcontrolTask);
-        suspend = false;
-      }
+    if (pwm_percentile > 255) {
+      pwm_percentile = 255;
     }
-    vTaskDelay(pdMS_TO_TICKS(10)); 
+    PWM = (pwm_percentile * 255.00) / 100.0;
+    if (type == 'L') {
+      ledcWriteChannel(ledChannel, PWM);
+      type = 0;
+    } else if (type == 'C') {
+      count_down();
+      type = 0;
+    } else if (type == 'S') {
+      PWM = 0;
+
+      ledcWriteChannel(ledChannel, PWM);
+      type = 0;
+      pwm_percentile = 0;
+    }
+    vTaskDelay(pdMS_TO_TICKS(10));
   }
 }
 
+
 void count_down() {
   while (1) {
-    ledcWriteChannel(ledChannel, PWM); 
-    delay(1000);
-    PWM -= (10 * 100.0) / 255;  
-    if (PWM <= 0) {             
-      break;                   
+    ledcWriteChannel(ledChannel, PWM);
+    delay(200);
+    if (type == 'S') {
+      PWM = 0;
+      ledcWriteChannel(ledChannel, PWM);
+      type = 0;
+
+      break;
+    }
+    PWM -= (10 * 100.0) / 255;
+
+    if (PWM <= 0) {
+      PWM = 0;
+      pwm_percentile = 0;
+      break;
     }
   }
 }
 
 void loop() {
-  Serial.println(PWM / 255 * 5);
+  float volt = PWM / 255 * 3.3;
+  Serial.println(volt);
+  delay(1000);
 }

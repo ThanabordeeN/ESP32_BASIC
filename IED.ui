@@ -108,12 +108,7 @@ background-color: rgb(60, 60, 60);
 border-radius: 15px;</string>
     </property>
     <property name="plainText">
-     <string>SENT: LED100, TIMESTAMP: 2022-09-50 09:50:22, DATE: 2567-09-08
-SENT: CD100, TIMESTAMP: 2022-09-50 09:55:58, DATE: 2567-09-08
-SENT: STOP, TIMESTAMP: 2022-09-50 09:58:00, DATE: 2567-09-08
-
-
-</string>
+     <string/>
     </property>
     <property name="tabStopDistance">
      <double>80.000000000000000</double>
@@ -344,7 +339,7 @@ background-color: rgb(60, 60, 60);
 </string>
     </property>
     <property name="text">
-     <string>LED ON</string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -376,7 +371,7 @@ color: rgb(255, 255, 255);
 </string>
     </property>
     <property name="text">
-     <string>SENT</string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
